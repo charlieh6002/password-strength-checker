@@ -5,7 +5,7 @@ class Checker():
     def __init__(self):
         self.special_characters = ["!","@","£","#","$","%","^","&","*","(",")","-","_","+","=","{","}","[","]",":",";","","'","|",",","<",".",">","?","/","±","€","~","`"]
 
-    def check(self):
+    def check(self, user_password):
         length = False
         upper = False
         lower = False
