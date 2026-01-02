@@ -1,4 +1,9 @@
-#password-checker.py
+#---IMPORTS----
+
+import tkinter as tk
+from tkinter import *
+
+#----CHECKER CLASS----
 
 class Checker():
     
@@ -38,20 +43,34 @@ class Checker():
         else:
             return ("weak password")
 
-#main loop
+
+#----INITIALISING----
 
 run = True
 checker = Checker()
-print("passwords should: ")
-print("be at least 8 characters in length")
-print("contain at least 1 uppercase and lowercase character")
-print("contain at least 1 number")
-print("contain at least 1 special character")
+window = tk.Tk()
+
+i1 = Label(window, text = "Password Strength Checker")
+i2 = Label(window, text = "passwords should:")
+i3 = Label(window, text = "be at least 8 characters in length")
+i4 = Label(window, text = "contain at least 1 uppercase and lowercase character")
+i5 = Label(window, text = "contain at least 1 number")
+i6 = Label(window, text = "contain at least 1 special character")
+
+i1.pack()
+i2.pack()
+i3.pack()
+i4.pack()
+i5.pack()
+i6.pack()
+
+window.mainloop()
+#----MAIN-LOOP----
 
 while run:
     user_password = input("enter password: ")
     print(checker.check(user_password))
-    user_input = input("continue? y/n?")
+    user_input = input("continue? y/n? ")
     if user_input.lower() == "n":
         print("quitting...")
         run = False
