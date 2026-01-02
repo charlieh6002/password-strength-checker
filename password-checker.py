@@ -49,20 +49,24 @@ class Checker():
 run = True
 checker = Checker()
 window = tk.Tk()
+window.title("Password Strength Checker")
 
-i1 = Label(window, text = "Password Strength Checker")
-i2 = Label(window, text = "passwords should:")
-i3 = Label(window, text = "be at least 8 characters in length")
-i4 = Label(window, text = "contain at least 1 uppercase and lowercase character")
-i5 = Label(window, text = "contain at least 1 number")
-i6 = Label(window, text = "contain at least 1 special character")
+screen_width = window.winfo_width()
+screen_height = window.winfo_height()
+window_width = 800
+window_height = 600
+window_x = int(screen_width/2 - window_width/2)
+window_y = int(screen_height/2 - window_height/2)
 
-i1.pack()
-i2.pack()
-i3.pack()
-i4.pack()
-i5.pack()
-i6.pack()
+window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+
+Label(window, text = "Password Strength Checker").grid(row = 2)
+Label(window, text = "passwords should:").grid(row = 4)
+Label(window, text = "be at least 8 characters in length").grid(row = 5)
+Label(window, text = "contain at least 1 uppercase and lowercase character").grid(row = 6)
+Label(window, text = "contain at least 1 number").grid(row = 7)
+Label(window, text = "contain at least 1 special character").grid(row = 8)
+
 
 window.mainloop()
 #----MAIN-LOOP----
