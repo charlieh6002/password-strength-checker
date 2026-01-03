@@ -2,7 +2,7 @@
 
 import tkinter as tk
 from tkinter import *
-
+from tkinter import font
 #----CHECKER CLASS----
 
 class Checker():
@@ -51,30 +51,39 @@ checker = Checker()
 window = tk.Tk()
 window.title("Password Strength Checker")
 
-screen_width = window.winfo_width()
-screen_height = window.winfo_height()
-window_width = 800
-window_height = 600
-window_x = int(screen_width/2 - window_width/2) * -1
-window_y = int(screen_height/2 - window_height/2)
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+window_width = 1200
+window_height = 800
+window_x = int((screen_width - window_width)/2)
+window_y = int((screen_height - window_height)/2)
 
 window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+window.configure(background = "light grey")
 
-Label(window, text = "Password Strength Checker").place(relx = 0.0, anchor = 'n')
-Label(window, text = "passwords should:").place(relx = -1.0, rely = -3.0, anchor = 'nw')
-Label(window, text = "be at least 8 characters in length").place(relx = -1.0, rely = -6.0, anchor = 'nw')
-Label(window, text = "contain at least 1 uppercase and lowercase character").place(relx = -1.0, rely = -7.0, anchor = 'nw')
-Label(window, text = "contain at least 1 number").place(relx = -1.0, rely = -8.0, anchor = 'nw')
-Label(window, text = "contain at least 1 special character").place(relx = -1.0, rely = -9.0, anchor = 'nw')
+#background and graphics
+frame = tk.Frame(window, width = window_width, height = window_height)
+frame.configure(background = "black")
+frame.pack(padx = 10, pady = 10)
+
+large_pixeboy_font = font.Font(family = "Pixeboy", size = 50)
+medium_pixeboy_font = font.Font(family = "Pixeboy", size = 30)
+Label(window, text = "Password Strength Checker", font = large_pixeboy_font, background = "black").place(relx = 0.5, rely = 0.05, anchor = 'n')
+
+Label(window, text = "passwords should:", font = medium_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.2, anchor = 'nw')
+Label(window, text = "be at least 8 characters in length", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -6.0, anchor = 'nw')
+Label(window, text = "contain at least 1 uppercase and lowercase character", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -7.0, anchor = 'nw')
+Label(window, text = "contain at least 1 number", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -8.0, anchor = 'nw')
+Label(window, text = "contain at least 1 special character", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -9.0, anchor = 'nw')
 
 
 window.mainloop()
 #----MAIN-LOOP----
 
-while run:
-    user_password = input("enter password: ")
-    print(checker.check(user_password))
-    user_input = input("continue? y/n? ")
-    if user_input.lower() == "n":
-        print("quitting...")
-        run = False
+#while run:
+ #   user_password = input("enter password: ")
+  #  print(checker.check(user_password))
+   # user_input = input("continue? y/n? ")
+    #if user_input.lower() == "n":
+     #   print("quitting...")
+      #  run = False
