@@ -66,16 +66,27 @@ frame = tk.Frame(window, width = window_width, height = window_height)
 frame.configure(background = "black")
 frame.pack(padx = 10, pady = 10)
 
+entry_frame = tk.Frame(window, width = 200, height = 45)
+entry_frame.configure(background = "white")
+entry_frame.pack(padx = 10, pady = 10)
+
 large_pixeboy_font = font.Font(family = "Pixeboy", size = 50)
-medium_pixeboy_font = font.Font(family = "Pixeboy", size = 30)
+medium_pixeboy_font = font.Font(family = "Pixeboy", size = 40)
+small_pixeboy_font = font.Font(family = "Pixeboy", size = 30)
+
 Label(window, text = "Password Strength Checker", font = large_pixeboy_font, background = "black").place(relx = 0.5, rely = 0.05, anchor = 'n')
 
-Label(window, text = "passwords should:", font = medium_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.2, anchor = 'nw')
-Label(window, text = "be at least 8 characters in length", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -6.0, anchor = 'nw')
-Label(window, text = "contain at least 1 uppercase and lowercase character", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -7.0, anchor = 'nw')
-Label(window, text = "contain at least 1 number", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -8.0, anchor = 'nw')
-Label(window, text = "contain at least 1 special character", font = medium_pixeboy_font, background = "black").place(relx = -1.0, rely = -9.0, anchor = 'nw')
+Label(window, text = "passwords should:", font = medium_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.175, anchor = 'nw')
 
+Label(window, text = "be at least 8 characters in length", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.25, anchor = 'nw')
+Label(window, text = "contain at least 1 uppercase and lowercase character", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.3, anchor = 'nw')
+Label(window, text = "contain at least 1 number", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.35, anchor = 'nw')
+Label(window, text = "contain at least 1 special character", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.4, anchor = 'nw')
+
+#text entry
+
+Label(window, text = "Password: ", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.5, anchor = "nw")
+password_entry = Entry(window, show = "*", fg = "black", bg = "white", width = 100, text = "Password:").place(relx = 0.2, rely = 0.55, anchor = "nw")
 
 window.mainloop()
 #----MAIN-LOOP----
