@@ -55,17 +55,17 @@ screen_width = window.winfo_width()
 screen_height = window.winfo_height()
 window_width = 800
 window_height = 600
-window_x = int(screen_width/2 - window_width/2)
+window_x = int(screen_width/2 - window_width/2) * -1
 window_y = int(screen_height/2 - window_height/2)
 
 window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
 
-Label(window, text = "Password Strength Checker").grid(row = 2)
-Label(window, text = "passwords should:").grid(row = 4)
-Label(window, text = "be at least 8 characters in length").grid(row = 5)
-Label(window, text = "contain at least 1 uppercase and lowercase character").grid(row = 6)
-Label(window, text = "contain at least 1 number").grid(row = 7)
-Label(window, text = "contain at least 1 special character").grid(row = 8)
+Label(window, text = "Password Strength Checker").place(relx = 0.0, anchor = 'n')
+Label(window, text = "passwords should:").place(relx = -1.0, rely = -3.0, anchor = 'nw')
+Label(window, text = "be at least 8 characters in length").place(relx = -1.0, rely = -6.0, anchor = 'nw')
+Label(window, text = "contain at least 1 uppercase and lowercase character").place(relx = -1.0, rely = -7.0, anchor = 'nw')
+Label(window, text = "contain at least 1 number").place(relx = -1.0, rely = -8.0, anchor = 'nw')
+Label(window, text = "contain at least 1 special character").place(relx = -1.0, rely = -9.0, anchor = 'nw')
 
 
 window.mainloop()
