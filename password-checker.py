@@ -84,9 +84,25 @@ Label(window, text = "contain at least 1 number", font = small_pixeboy_font, bac
 Label(window, text = "contain at least 1 special character", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.4, anchor = 'nw')
 
 #text entry
+
 password_font = font.Font(family = "Arial", size = 30)
 Label(window, text = "Password: ", font = small_pixeboy_font, background = "black").place(relx = 0.05, rely = 0.5, anchor = "nw")
-password_entry = Entry(window, show = "*", fg = "black", bg = "white", width = 40, text = "Password:", font = password_font).place(relx = 0.2, rely = 0.5, anchor = "nw")
+
+password_text_var = tk.StringVar()
+password_entry = tk.Entry(window, show = "●", fg = "black", bg = "white", text = "Password:", font = password_font)
+password_entry.place(relx = 0.2, rely = 0.5, anchor = "nw", height = 50, width = 700)
+
+def show_password():
+    if password_entry.cget("show") == "●":
+        password_entry.config(font = small_pixeboy_font)
+        password_entry.config(show = "")
+    else:
+        password_entry.config(font = password_font)
+        password_entry.config(show = "●")
+
+
+show_button = tk.Button(window, text = "show", font = small_pixeboy_font, background = "white", bg = "white", fg = "black", command = show_password, borderwidth = 0, anchor = "center", pady = 0)
+show_button.place(relx = 0.8, rely = 0.5, anchor = "nw", height = 50, width = 90)
 
 window.mainloop()
 #----MAIN-LOOP----
